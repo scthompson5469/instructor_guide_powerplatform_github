@@ -50,13 +50,13 @@ env:
 
 #edit your values here 
 
+  environment: DEV
+
   ENVIRONMENT_URL: ${{ secrets.URL }} 
 
   CLIENT_ID: ${{ secrets.CLIENT_ID }} 
 
   TENANT_ID: ${{ secrets.TENANT_ID }}
-  
-
  
 
 jobs: 
