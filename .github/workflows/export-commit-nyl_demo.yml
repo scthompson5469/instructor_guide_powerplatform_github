@@ -52,11 +52,10 @@ env:
 
   ENVIRONMENT_URL: ${{ secrets.URL }} 
 
-  CLIENT_ID: ${{ secrets.client_id }} 
+  CLIENT_ID: ${{ secrets.CLIENT_ID }} 
 
-  TENANT_ID: ${{ secrets.tenant_id }}
+  TENANT_ID: ${{ secrets.TENANT_ID }}
   
-  CLIENT_SECRET: ${{ secrets.client_secret }}
 
  
 
@@ -96,7 +95,7 @@ jobs:
 
         app-id: ${{env.CLIENT_ID}} 
 
-        client-secret: ${{ secrets.CLIENT_SECRET }} 
+        client-secret: ${{ secrets.PowerPlatformSPN }}
 
         tenant-id: ${{env.TENANT_ID}} 
 
