@@ -1,0 +1,29 @@
+{
+  "QualifiedValues": [
+    {
+      "Kind": "default.cds_contact_forms",
+      "Namespace": "Contacts (Forms)",
+      "Values": {
+        "account contact card": "29de27bc-a257-4f29-99cf-bab4a84e688f",
+        "AI for Sales": "293c878f-f068-40a0-ae48-4297e060871c",
+        "App for Outlook Contact Card": "cdbb9298-3b2e-41f3-8f4a-0168d6b09fc4",
+        "App for Outlook Contact Quick View": "3d22ab88-96c8-4b3f-a533-d4827e2925c9",
+        "Contact": "1fed44d1-ae68-4a41-bd2b-f13acac4acfa",
+        "contact card": "707fc57b-c5e6-471b-a180-e37ed28a38e2",
+        "Contact Card form": "bc0f68dd-a4b1-4a8f-bed3-c8f5db2f89cf",
+        "Contact for Interactive experience": "cc760212-3eab-4009-b5c3-ea9cf6f3e141",
+        "Contact for Multisession experience": "e06af4d1-2812-45c7-a9c2-9fb73fee7bec",
+        "Contact Quick Create": "661157fe-2fc9-4eaa-835f-5bfa2f7b64f7",
+        "Contact Quick Form": "bdb0ae1c-32fa-4374-b637-8dafe107bc44",
+        "Contact Reference Panel": "d880c3cf-80e2-42f3-82f9-24d040d09f17",
+        "Contacts Dashboard": "70ad8b15-e3f3-4d7d-9e4b-16cb4e51b484",
+        "In Context Form": "4c9c89b9-f909-4b34-8f63-b87d7ff2f0c4",
+        "Information": "894cc46a-b0cb-4ab0-8bf6-200544e46a2d",
+        "Live Persona Card Form": "449faa0e-f471-48ec-87d0-4719909546d2",
+        "Recent Cases and Entitlements": "f3b707fb-3b5f-45f9-9c6b-5e573bb5d19e",
+        "Social Profiles": "7bb87dfd-ec3e-4ed9-8e3e-5725d3067295",
+        "Update Contact": "26843818-6508-4afe-9342-5fae2ebf15ca"
+      }
+    }
+  ]
+}
