@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ImportExportXml version="9.2.23021.198" SolutionPackageVersion="9.2" languagecode="1033" generatedBy="CrmLive" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<ImportExportXml version="9.2.24015.196" SolutionPackageVersion="9.2" languagecode="1033" generatedBy="CrmLive" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <SolutionManifest>
     <UniqueName>nyl_demo</UniqueName>
     <LocalizedNames>
       <LocalizedName description="nyl_demo" languagecode="1033" />
     </LocalizedNames>
     <Descriptions />
-    <Version>1.0.0.0</Version>
+    <Version>20230320.2.62</Version>
     <Managed>2</Managed>
     <Publisher>
       <UniqueName>NYL</UniqueName>
@@ -82,242 +82,336 @@
       <RootComponent type="29" id="{837a0ebf-adb6-ec11-983f-0022482bf535}" behavior="0" />
       <RootComponent type="300" schemaName="bk_bankingdemo_9eb1b" behavior="0" />
       <RootComponent type="60" id="{15915835-b87c-49ec-9ffc-bfac3ac44ef1}" />
+      <RootComponent type="62" schemaName="nyl_testextract" behavior="0" />
+      <RootComponent type="80" schemaName="nyl_testextract" behavior="0" />
     </RootComponents>
     <MissingDependencies>
       <MissingDependency>
+        <Required type="1" schemaName="adx_invitation" displayName="Invitation" solution="PowerPages_RuntimeCore (1.0.2312.2)">
+          <package>PowerPages_Core (1.0.2401.75)</package>
+        </Required>
+        <Dependent type="1" schemaName="account" displayName="Account" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="1" schemaName="appsetting" displayName="Model-Driven App Setting" solution="AppModule (9.1.231055.231026002)" />
+        <Dependent type="62" schemaName="nyl_testextract" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="1" schemaName="appsetting" displayName="Model-Driven App Setting" solution="AppModule (9.1.231055.231026002)" />
+        <Dependent type="80" schemaName="nyl_testextract" displayName="test extract" />
+      </MissingDependency>
+      <MissingDependency>
         <Required type="1" schemaName="incident" displayName="Case" solution="msdynce_Service (9.0.5.56)">
-          <package>msdynce_ServiceAnchor (9.0.23021.1010)</package>
+          <package>msdynce_ServiceAnchor (9.0.24014.1004)</package>
         </Required>
         <Dependent type="60" displayName="Account for Multisession experience" parentDisplayName="Account" id="{ff49442f-8c60-4877-bdae-8fe51e6f4636}" />
       </MissingDependency>
       <MissingDependency>
-        <Required type="1" schemaName="msdyn_aicontactsuggestion" displayName="Teams Contact Suggestion by AI" solution="msdyn_Collaboration (9.1.23015.10007)">
-          <package>msdynce_OfficeProductivityAnchor (9.0.23021.10001)</package>
+        <Required type="1" schemaName="msdyn_accountkpiitem" displayName="Account KPI Item" solution="RelationshipAnalytics (9.0.24014.3)">
+          <package>msdynce_SalesInsightsAnchor (9.0.24014.10015)</package>
+        </Required>
+        <Dependent type="1" schemaName="account" displayName="Account" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="1" schemaName="msdyn_accountkpiitem" displayName="Account KPI Item" solution="RelationshipAnalytics (9.0.24014.3)">
+          <package>msdynce_SalesInsightsAnchor (9.0.24014.10015)</package>
+        </Required>
+        <Dependent type="10" schemaName="msdyn_msdyn_accountkpiitem_account_accountkpiid" displayName="msdyn_msdyn_accountkpiitem_account_accountkpiid" parentSchemaName="msdyn_accountkpiitem" parentDisplayName="Account KPI Item" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="1" schemaName="msdyn_aicontactsuggestion" displayName="Teams Contact Suggestion by AI" solution="msdyn_Collaboration (9.1.23112.10002)">
+          <package>msdynce_OfficeProductivityAnchor (9.0.24014.10001)</package>
+        </Required>
+        <Dependent type="1" schemaName="account" displayName="Account" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="1" schemaName="msdyn_conversationparticipantinsights" displayName="Conversation Participant Insights" solution="msdyn_Conversation_Intelligence (9.0.1.1181)">
+          <package>msdyn_SalesConversationIntelligenceAnchor (9.0.1.1181)</package>
         </Required>
         <Dependent type="1" schemaName="account" displayName="Account" />
       </MissingDependency>
       <MissingDependency>
         <Required type="1" schemaName="msdyn_customerasset" displayName="Customer Asset" solution="msdyn_AssetCommon (1.0.26.9)">
-          <package>msdynce_ServiceAnchor (9.0.23021.1010)</package>
+          <package>msdynce_ServiceAnchor (9.0.24014.1004)</package>
         </Required>
         <Dependent type="1" schemaName="account" displayName="Account" />
       </MissingDependency>
       <MissingDependency>
-        <Required type="1" schemaName="msdyn_iotdevice" displayName="IoT Device" solution="IoTConnector (1.8.9.7)">
-          <package>msdynce_ServiceAnchor (9.0.23021.1010)</package>
+        <Required type="1" schemaName="msdyn_dailyaccountkpiitem" displayName="Daily Kpis for account" solution="RelationshipAnalytics (9.0.24014.3)">
+          <package>msdynce_SalesInsightsAnchor (9.0.24014.10015)</package>
         </Required>
         <Dependent type="1" schemaName="account" displayName="Account" />
       </MissingDependency>
       <MissingDependency>
-        <Required type="1" schemaName="msdyn_liveconversation" displayName="Ongoing conversation (Deprecated)" solution="OmnichannelBase (1.5.0.5954)">
-          <package>UnifiedRoutingPrimeAnchor (1.5.16.6440)</package>
+        <Required type="1" schemaName="msdyn_iotdevice" displayName="IoT Device" solution="IoTConnector (1.8.48.0)">
+          <package>msdynce_ServiceAnchor (9.0.24014.1004)</package>
         </Required>
         <Dependent type="1" schemaName="account" displayName="Account" />
       </MissingDependency>
       <MissingDependency>
-        <Required type="1" schemaName="msdyn_ocliveworkitem" displayName="Conversation" solution="OmnichannelBase (1.5.0.5954)">
-          <package>UnifiedRoutingPrimeAnchor (1.5.16.6440)</package>
+        <Required type="1" schemaName="msdyn_liveconversation" displayName="Ongoing conversation (Deprecated)" solution="OmnichannelBase (1.10.0.71)">
+          <package>UnifiedRoutingPrimeAnchor (1.5.26.80)</package>
         </Required>
         <Dependent type="1" schemaName="account" displayName="Account" />
       </MissingDependency>
       <MissingDependency>
-        <Required type="1" schemaName="msdyn_preferredagent" displayName="Preferred Agent" solution="UnifiedRouting (1.0.0.3795)">
-          <package>UnifiedRoutingPrimeAnchor (1.5.16.6440)</package>
+        <Required type="1" schemaName="msdyn_mostcontacted" displayName="Most Contacted" solution="RelationshipAnalytics (9.0.24014.3)">
+          <package>msdynce_SalesInsightsAnchor (9.0.24014.10015)</package>
         </Required>
         <Dependent type="1" schemaName="account" displayName="Account" />
       </MissingDependency>
       <MissingDependency>
-        <Required type="1" schemaName="msdyn_sabackupdiagnostic" displayName="sabackupdiagnostic" solution="msdyn_segment (9.1.2302.1001)">
-          <package>msdyn_AcceleratedSalesAnchor (9.1.23021.10011)</package>
-          <package>msdynce_SalesInsightsAnchor (9.0.23021.10005)</package>
+        <Required type="1" schemaName="msdyn_mostcontactedby" displayName="Most Contacted By" solution="RelationshipAnalytics (9.0.24014.3)">
+          <package>msdynce_SalesInsightsAnchor (9.0.24014.10015)</package>
         </Required>
         <Dependent type="1" schemaName="account" displayName="Account" />
       </MissingDependency>
       <MissingDependency>
-        <Required type="1" schemaName="msdyn_salesaccelerationinsight" displayName="Sales acceleration insights" solution="msdyn_acceleratedsales (9.1.23021.10011)">
-          <package>msdyn_AcceleratedSalesAnchor (9.1.23021.10011)</package>
-          <package>msdynce_SalesInsightsAnchor (9.0.23021.10005)</package>
+        <Required type="1" schemaName="msdyn_ocliveworkitem" displayName="Conversation" solution="OmnichannelBase (1.10.0.71)">
+          <package>UnifiedRoutingPrimeAnchor (1.5.26.80)</package>
         </Required>
         <Dependent type="1" schemaName="account" displayName="Account" />
       </MissingDependency>
       <MissingDependency>
-        <Required type="1" schemaName="msdyn_salesaccelerationinsight" displayName="Sales acceleration insights" solution="msdyn_acceleratedsales (9.1.23021.10011)">
-          <package>msdyn_AcceleratedSalesAnchor (9.1.23021.10011)</package>
-          <package>msdynce_SalesInsightsAnchor (9.0.23021.10005)</package>
+        <Required type="1" schemaName="msdyn_orgchartnode" displayName="Microsoft Orgchart node entity" solution="msdyn_LinkedInExtensions (9.0.23105.10011)">
+          <package>msdyn_SalesIntegrationsAddOns (9.0.24014.10001)</package>
+        </Required>
+        <Dependent type="1" schemaName="account" displayName="Account" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="1" schemaName="msdyn_preferredagent" displayName="Preferred Agent" solution="UnifiedRouting (1.0.0.4794)">
+          <package>UnifiedRoutingPrimeAnchor (1.5.26.80)</package>
+        </Required>
+        <Dependent type="1" schemaName="account" displayName="Account" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="1" schemaName="msdyn_sabackupdiagnostic" displayName="sabackupdiagnostic" solution="msdyn_segment (9.1.2401.4001)">
+          <package>msdyn_AcceleratedSalesAnchor (9.1.24014.10011)</package>
+          <package>msdynce_SalesInsightsAnchor (9.0.24014.10015)</package>
+        </Required>
+        <Dependent type="1" schemaName="account" displayName="Account" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="1" schemaName="msdyn_salesaccelerationinsight" displayName="Sales acceleration insights" solution="msdyn_acceleratedsales (9.1.24014.10011)">
+          <package>msdyn_AcceleratedSalesAnchor (9.1.24014.10011)</package>
+          <package>msdynce_SalesInsightsAnchor (9.0.24014.10015)</package>
+        </Required>
+        <Dependent type="1" schemaName="account" displayName="Account" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="1" schemaName="msdyn_salesaccelerationinsight" displayName="Sales acceleration insights" solution="msdyn_acceleratedsales (9.1.24014.10011)">
+          <package>msdyn_AcceleratedSalesAnchor (9.1.24014.10011)</package>
+          <package>msdynce_SalesInsightsAnchor (9.0.24014.10015)</package>
         </Required>
         <Dependent type="10" schemaName="msdyn_insightsid_salesaccelerationinsights" displayName="msdyn_insightsid_salesaccelerationinsights" parentSchemaName="msdyn_salesaccelerationinsight" parentDisplayName="Sales acceleration insights" />
       </MissingDependency>
       <MissingDependency>
-        <Required type="1" schemaName="msdyn_salesroutingdiagnostic" displayName="salesroutingdiagnostic" solution="msdyn_segment (9.1.2302.1001)">
-          <package>msdyn_AcceleratedSalesAnchor (9.1.23021.10011)</package>
-          <package>msdynce_SalesInsightsAnchor (9.0.23021.10005)</package>
+        <Required type="1" schemaName="msdyn_salescopilotinsight" displayName="Sales Copilot Insight" solution="msdyn_SalesCopilot (9.1.24014.10010)">
+          <package>msdynce_SalesAnchor (9.0.24014.10016)</package>
         </Required>
         <Dependent type="1" schemaName="account" displayName="Account" />
       </MissingDependency>
       <MissingDependency>
-        <Required type="1" schemaName="msdyn_salessuggestion" displayName="Suggestion" solution="msdyn_acceleratedsales (9.1.23021.10011)">
-          <package>msdyn_AcceleratedSalesAnchor (9.1.23021.10011)</package>
-          <package>msdynce_SalesInsightsAnchor (9.0.23021.10005)</package>
+        <Required type="1" schemaName="msdyn_salesroutingdiagnostic" displayName="salesroutingdiagnostic" solution="msdyn_segment (9.1.2401.4001)">
+          <package>msdyn_AcceleratedSalesAnchor (9.1.24014.10011)</package>
+          <package>msdynce_SalesInsightsAnchor (9.0.24014.10015)</package>
         </Required>
         <Dependent type="1" schemaName="account" displayName="Account" />
       </MissingDependency>
       <MissingDependency>
-        <Required type="1" schemaName="msdyn_segment" displayName="Segment" solution="msdyn_segment (9.1.2302.1001)">
-          <package>msdyn_AcceleratedSalesAnchor (9.1.23021.10011)</package>
-          <package>msdynce_SalesInsightsAnchor (9.0.23021.10005)</package>
+        <Required type="1" schemaName="msdyn_salessuggestion" displayName="Insight" solution="msdyn_acceleratedsales (9.1.24014.10011)">
+          <package>msdyn_AcceleratedSalesAnchor (9.1.24014.10011)</package>
+          <package>msdynce_SalesInsightsAnchor (9.0.24014.10015)</package>
+        </Required>
+        <Dependent type="1" schemaName="account" displayName="Account" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="1" schemaName="msdyn_segment" displayName="Segment" solution="msdyn_segment (9.1.2401.4001)">
+          <package>msdyn_AcceleratedSalesAnchor (9.1.24014.10011)</package>
+          <package>msdynce_SalesInsightsAnchor (9.0.24014.10015)</package>
         </Required>
         <Dependent type="10" schemaName="msdyn_msdyn_segment_account" displayName="msdyn_msdyn_segment_account" parentSchemaName="msdyn_segment" parentDisplayName="Segment" />
       </MissingDependency>
       <MissingDependency>
-        <Required type="1" schemaName="msdyn_sequencetarget" displayName="Sequence Target" solution="msdyn_Sequence (9.1.2302.1005)">
-          <package>msdyn_AcceleratedSalesAnchor (9.1.23021.10011)</package>
-          <package>msdynce_SalesInsightsAnchor (9.0.23021.10005)</package>
+        <Required type="1" schemaName="msdyn_sequencetarget" displayName="Sequence Target" solution="msdyn_Sequence (9.1.2401.4001)">
+          <package>msdyn_AcceleratedSalesAnchor (9.1.24014.10011)</package>
+          <package>msdynce_SalesInsightsAnchor (9.0.24014.10015)</package>
         </Required>
         <Dependent type="1" schemaName="account" displayName="Account" />
       </MissingDependency>
       <MissingDependency>
-        <Required type="1" schemaName="msdyn_swarm" displayName="Swarm" solution="msdyn_Swarming (9.0.23021.1020)">
-          <package>msdyn_ServiceExtendedAnchor (9.0.23021.1020)</package>
+        <Required type="1" schemaName="msdyn_swarm" displayName="Swarm" solution="msdyn_Swarming (9.0.24014.1012)">
+          <package>msdyn_ServiceExtendedAnchor (9.0.24014.1012)</package>
         </Required>
         <Dependent type="1" schemaName="account" displayName="Account" />
       </MissingDependency>
       <MissingDependency>
-        <Required type="10" schemaName="msdyn_insightsid_salesaccelerationinsights" displayName="msdyn_insightsid_salesaccelerationinsights" parentSchemaName="msdyn_salesaccelerationinsight" parentDisplayName="Sales acceleration insights" solution="msdyn_acceleratedsales (9.1.23021.10011)">
-          <package>msdyn_AcceleratedSalesAnchor (9.1.23021.10011)</package>
-          <package>msdynce_SalesInsightsAnchor (9.0.23021.10005)</package>
+        <Required type="10" schemaName="msdyn_insightsid_salesaccelerationinsights" displayName="msdyn_insightsid_salesaccelerationinsights" parentSchemaName="msdyn_salesaccelerationinsight" parentDisplayName="Sales acceleration insights" solution="msdyn_acceleratedsales (9.1.24014.10011)">
+          <package>msdyn_AcceleratedSalesAnchor (9.1.24014.10011)</package>
+          <package>msdynce_SalesInsightsAnchor (9.0.24014.10015)</package>
         </Required>
         <Dependent type="10" schemaName="msdyn_insightsid_salesaccelerationinsights" displayName="msdyn_insightsid_salesaccelerationinsights" parentSchemaName="msdyn_salesaccelerationinsight" parentDisplayName="Sales acceleration insights" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="10" schemaName="msdyn_msdyn_accountkpiitem_account_accountkpiid" displayName="msdyn_msdyn_accountkpiitem_account_accountkpiid" parentSchemaName="msdyn_accountkpiitem" parentDisplayName="Account KPI Item" solution="RelationshipAnalytics (9.0.24014.3)">
+          <package>msdynce_SalesInsightsAnchor (9.0.24014.10015)</package>
+        </Required>
+        <Dependent type="10" schemaName="msdyn_msdyn_accountkpiitem_account_accountkpiid" displayName="msdyn_msdyn_accountkpiitem_account_accountkpiid" parentSchemaName="msdyn_accountkpiitem" parentDisplayName="Account KPI Item" />
       </MissingDependency>
       <MissingDependency>
         <Required type="2" schemaName="defaultpricelevelid" displayName="Price List" parentSchemaName="account" parentDisplayName="Account" solution="msdynce_ProductManagement (9.0.4.0066)">
-          <package>msdynce_ProductManagementAnchor (9.0.23021.10002)</package>
+          <package>msdynce_ProductManagementAnchor (9.0.24014.10001)</package>
         </Required>
         <Dependent type="60" displayName="Information" parentDisplayName="Account" id="{b053a39a-041a-4356-acef-ddf00182762b}" />
       </MissingDependency>
       <MissingDependency>
-        <Required type="2" schemaName="msdyn_name" displayName="Name" parentSchemaName="msdyn_salesaccelerationinsight" parentDisplayName="Sales acceleration insights" solution="msdyn_acceleratedsales (9.1.23021.10011)">
-          <package>msdyn_AcceleratedSalesAnchor (9.1.23021.10011)</package>
-          <package>msdynce_SalesInsightsAnchor (9.0.23021.10005)</package>
+        <Required type="2" schemaName="msa_managingpartnerid" displayName="Managing Partner" parentSchemaName="account" parentDisplayName="Account" solution="PowerPages_RuntimeCoreDependencies (1.0.2305.1)">
+          <package>PowerPages_Core (1.0.2401.75)</package>
+        </Required>
+        <Dependent type="10" schemaName="msa_account_managingpartner" displayName="msa_account_managingpartner" parentSchemaName="account" parentDisplayName="Account" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="2" schemaName="msdyn_accountkpiid" displayName="KPI" parentSchemaName="account" parentDisplayName="Account" solution="RelationshipAnalytics (9.0.24014.3)">
+          <package>msdynce_SalesInsightsAnchor (9.0.24014.10015)</package>
+        </Required>
+        <Dependent type="10" schemaName="msdyn_msdyn_accountkpiitem_account_accountkpiid" displayName="msdyn_msdyn_accountkpiitem_account_accountkpiid" parentSchemaName="msdyn_accountkpiitem" parentDisplayName="Account KPI Item" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="2" schemaName="msdyn_accountkpiitemid" displayName="Unique Identifier for Entity Instances" parentSchemaName="msdyn_accountkpiitem" parentDisplayName="Account KPI Item" solution="RelationshipAnalytics (9.0.24014.3)">
+          <package>msdynce_SalesInsightsAnchor (9.0.24014.10015)</package>
+        </Required>
+        <Dependent type="10" schemaName="msdyn_msdyn_accountkpiitem_account_accountkpiid" displayName="msdyn_msdyn_accountkpiitem_account_accountkpiid" parentSchemaName="msdyn_accountkpiitem" parentDisplayName="Account KPI Item" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="2" schemaName="msdyn_name" displayName="Custom Entity Name" parentSchemaName="msdyn_accountkpiitem" parentDisplayName="Account KPI Item" solution="RelationshipAnalytics (9.0.24014.3)">
+          <package>msdynce_SalesInsightsAnchor (9.0.24014.10015)</package>
+        </Required>
+        <Dependent type="10" schemaName="msdyn_msdyn_accountkpiitem_account_accountkpiid" displayName="msdyn_msdyn_accountkpiitem_account_accountkpiid" parentSchemaName="msdyn_accountkpiitem" parentDisplayName="Account KPI Item" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="2" schemaName="msdyn_name" displayName="Name" parentSchemaName="msdyn_salesaccelerationinsight" parentDisplayName="Sales acceleration insights" solution="msdyn_acceleratedsales (9.1.24014.10011)">
+          <package>msdyn_AcceleratedSalesAnchor (9.1.24014.10011)</package>
+          <package>msdynce_SalesInsightsAnchor (9.0.24014.10015)</package>
         </Required>
         <Dependent type="10" schemaName="msdyn_insightsid_salesaccelerationinsights" displayName="msdyn_insightsid_salesaccelerationinsights" parentSchemaName="msdyn_salesaccelerationinsight" parentDisplayName="Sales acceleration insights" />
       </MissingDependency>
       <MissingDependency>
-        <Required type="2" schemaName="msdyn_name" displayName="Segment name" parentSchemaName="msdyn_segment" parentDisplayName="Segment" solution="msdyn_segment (9.1.2302.1001)">
-          <package>msdyn_AcceleratedSalesAnchor (9.1.23021.10011)</package>
-          <package>msdynce_SalesInsightsAnchor (9.0.23021.10005)</package>
+        <Required type="2" schemaName="msdyn_name" displayName="Segment name" parentSchemaName="msdyn_segment" parentDisplayName="Segment" solution="msdyn_segment (9.1.2401.4001)">
+          <package>msdyn_AcceleratedSalesAnchor (9.1.24014.10011)</package>
+          <package>msdynce_SalesInsightsAnchor (9.0.24014.10015)</package>
         </Required>
         <Dependent type="10" schemaName="msdyn_msdyn_segment_account" displayName="msdyn_msdyn_segment_account" parentSchemaName="msdyn_segment" parentDisplayName="Segment" />
       </MissingDependency>
       <MissingDependency>
-        <Required type="2" schemaName="msdyn_salesaccelerationinsightid" displayName="Sales Acceleration Insights ID" parentSchemaName="account" parentDisplayName="Account" solution="msdyn_acceleratedsales (9.1.23021.10011)">
-          <package>msdyn_AcceleratedSalesAnchor (9.1.23021.10011)</package>
-          <package>msdynce_SalesInsightsAnchor (9.0.23021.10005)</package>
+        <Required type="2" schemaName="msdyn_salesaccelerationinsightid" displayName="Sales Acceleration Insights ID" parentSchemaName="account" parentDisplayName="Account" solution="msdyn_acceleratedsales (9.1.24014.10011)">
+          <package>msdyn_AcceleratedSalesAnchor (9.1.24014.10011)</package>
+          <package>msdynce_SalesInsightsAnchor (9.0.24014.10015)</package>
         </Required>
         <Dependent type="10" schemaName="msdyn_insightsid_salesaccelerationinsights" displayName="msdyn_insightsid_salesaccelerationinsights" parentSchemaName="msdyn_salesaccelerationinsight" parentDisplayName="Sales acceleration insights" />
       </MissingDependency>
       <MissingDependency>
-        <Required type="2" schemaName="msdyn_salesaccelerationinsightid" displayName="Sales acceleration insights" parentSchemaName="msdyn_salesaccelerationinsight" parentDisplayName="Sales acceleration insights" solution="msdyn_acceleratedsales (9.1.23021.10011)">
-          <package>msdyn_AcceleratedSalesAnchor (9.1.23021.10011)</package>
-          <package>msdynce_SalesInsightsAnchor (9.0.23021.10005)</package>
+        <Required type="2" schemaName="msdyn_salesaccelerationinsightid" displayName="Sales acceleration insights" parentSchemaName="msdyn_salesaccelerationinsight" parentDisplayName="Sales acceleration insights" solution="msdyn_acceleratedsales (9.1.24014.10011)">
+          <package>msdyn_AcceleratedSalesAnchor (9.1.24014.10011)</package>
+          <package>msdynce_SalesInsightsAnchor (9.0.24014.10015)</package>
         </Required>
         <Dependent type="10" schemaName="msdyn_insightsid_salesaccelerationinsights" displayName="msdyn_insightsid_salesaccelerationinsights" parentSchemaName="msdyn_salesaccelerationinsight" parentDisplayName="Sales acceleration insights" />
       </MissingDependency>
       <MissingDependency>
-        <Required type="2" schemaName="msdyn_segmentid" displayName="segment" parentSchemaName="msdyn_segment" parentDisplayName="Segment" solution="msdyn_segment (9.1.2302.1001)">
-          <package>msdyn_AcceleratedSalesAnchor (9.1.23021.10011)</package>
-          <package>msdynce_SalesInsightsAnchor (9.0.23021.10005)</package>
+        <Required type="2" schemaName="msdyn_segmentid" displayName="segment" parentSchemaName="msdyn_segment" parentDisplayName="Segment" solution="msdyn_segment (9.1.2401.4001)">
+          <package>msdyn_AcceleratedSalesAnchor (9.1.24014.10011)</package>
+          <package>msdynce_SalesInsightsAnchor (9.0.24014.10015)</package>
         </Required>
         <Dependent type="10" schemaName="msdyn_msdyn_segment_account" displayName="msdyn_msdyn_segment_account" parentSchemaName="msdyn_segment" parentDisplayName="Segment" />
       </MissingDependency>
       <MissingDependency>
         <Required type="2" schemaName="originatingleadid" displayName="Originating Lead" parentSchemaName="account" parentDisplayName="Account" solution="msdynce_LeadManagement (9.0.4.0066)">
-          <package>msdynce_LeadManagementAnchor (9.0.23021.10002)</package>
+          <package>msdynce_LeadManagementAnchor (9.0.24014.10001)</package>
         </Required>
         <Dependent type="60" displayName="Information" parentDisplayName="Account" id="{b053a39a-041a-4356-acef-ddf00182762b}" />
       </MissingDependency>
       <MissingDependency>
         <Required type="2" schemaName="originatingleadid" displayName="Originating Lead" parentSchemaName="account" parentDisplayName="Account" solution="msdynce_LeadManagement (9.0.4.0066)">
-          <package>msdynce_LeadManagementAnchor (9.0.23021.10002)</package>
+          <package>msdynce_LeadManagementAnchor (9.0.24014.10001)</package>
         </Required>
         <Dependent type="60" displayName="Account for Multisession experience" parentDisplayName="Account" id="{ff49442f-8c60-4877-bdae-8fe51e6f4636}" />
       </MissingDependency>
       <MissingDependency>
         <Required type="2" schemaName="territoryid" displayName="Territory" parentSchemaName="account" parentDisplayName="Account" solution="msdynce_Sales (9.0.4.0076)">
-          <package>msdynce_SalesAnchor (9.0.23021.10002)</package>
+          <package>msdynce_SalesAnchor (9.0.24014.10016)</package>
         </Required>
         <Dependent type="60" displayName="Information" parentDisplayName="Account" id="{b053a39a-041a-4356-acef-ddf00182762b}" />
       </MissingDependency>
       <MissingDependency>
         <Required type="20" displayName="Customer service app access" solution="msdynce_Customerservicehub (9.0.5.0056)" id="{3dac4d9e-568c-e611-80d4-00155d42a122}">
-          <package>msdynce_ServiceAnchor (9.0.23021.1010)</package>
+          <package>msdynce_ServiceAnchor (9.0.24014.1004)</package>
         </Required>
         <Dependent type="60" displayName="Account for Multisession experience" parentDisplayName="Account" id="{ff49442f-8c60-4877-bdae-8fe51e6f4636}" />
       </MissingDependency>
       <MissingDependency>
         <Required type="20" displayName="Customer Service Representative" solution="msdynce_Service (9.0.5.56)" id="{938ad1ad-2153-4ad1-9f2f-2d2901936cfe}" parentId="{ecfd0b44-5720-45e3-ae68-417ddb0fb654}">
-          <package>msdynce_ServiceAnchor (9.0.23021.1010)</package>
+          <package>msdynce_ServiceAnchor (9.0.24014.1004)</package>
         </Required>
         <Dependent type="60" displayName="Account for Multisession experience" parentDisplayName="Account" id="{ff49442f-8c60-4877-bdae-8fe51e6f4636}" />
       </MissingDependency>
       <MissingDependency>
         <Required type="20" displayName="CSR Manager" solution="msdynce_Service (9.0.5.56)" id="{c8f19ff8-f01b-49c0-87c9-54cb2e496356}" parentId="{1808b939-dd07-4ca7-aa99-ddd2734378f1}">
-          <package>msdynce_ServiceAnchor (9.0.23021.1010)</package>
+          <package>msdynce_ServiceAnchor (9.0.24014.1004)</package>
         </Required>
         <Dependent type="60" displayName="Account for Multisession experience" parentDisplayName="Account" id="{ff49442f-8c60-4877-bdae-8fe51e6f4636}" />
       </MissingDependency>
       <MissingDependency>
         <Required type="26" schemaName="Active Cases" displayName="Active Cases" parentSchemaName="incident" parentDisplayName="Case" solution="msdynce_Service (9.0.5.56)" id="{00000000-0000-0000-00aa-000010001032}">
-          <package>msdynce_ServiceAnchor (9.0.23021.1010)</package>
+          <package>msdynce_ServiceAnchor (9.0.24014.1004)</package>
         </Required>
         <Dependent type="60" displayName="Account for Multisession experience" parentDisplayName="Account" id="{ff49442f-8c60-4877-bdae-8fe51e6f4636}" />
       </MissingDependency>
       <MissingDependency>
         <Required type="26" schemaName="All Accounts" displayName="All Accounts" parentSchemaName="account" parentDisplayName="Account" solution="msdynce_AppCommon (9.0.4.0066)" id="{65ffaf9a-e8c5-432d-860b-32f841b00d87}">
-          <package>msdynce_AppCommonAnchor (9.0.23021.10001)</package>
+          <package>msdynce_AppCommonAnchor (9.0.24014.10002)</package>
         </Required>
         <Dependent type="60" displayName="Accounts Dashboard" parentDisplayName="Account" id="{15915835-b87c-49ec-9ffc-bfac3ac44ef1}" />
       </MissingDependency>
       <MissingDependency>
         <Required type="26" schemaName="My Active Cases" displayName="My Active Cases" parentSchemaName="incident" parentDisplayName="Case" solution="msdynce_Service (9.0.5.56)" id="{00000000-0000-0000-00aa-000010001028}">
-          <package>msdynce_ServiceAnchor (9.0.23021.1010)</package>
+          <package>msdynce_ServiceAnchor (9.0.24014.1004)</package>
         </Required>
         <Dependent type="60" displayName="Account for Multisession experience" parentDisplayName="Account" id="{ff49442f-8c60-4877-bdae-8fe51e6f4636}" />
       </MissingDependency>
       <MissingDependency>
         <Required type="59" schemaName="Active Cases by Agent" displayName="Active Cases by Agent" parentSchemaName="incident" parentDisplayName="Case" solution="msdynce_Service (9.0.5.56)" id="{4143b74e-4a07-4d01-9ffe-2cdcaa4208fd}">
-          <package>msdynce_ServiceAnchor (9.0.23021.1010)</package>
+          <package>msdynce_ServiceAnchor (9.0.24014.1004)</package>
         </Required>
         <Dependent type="60" displayName="Account for Multisession experience" parentDisplayName="Account" id="{ff49442f-8c60-4877-bdae-8fe51e6f4636}" />
       </MissingDependency>
       <MissingDependency>
         <Required type="60" displayName="Accounts Dashboard" parentDisplayName="Account" solution="msdynce_Service (9.0.5.56)" id="{15915835-b87c-49ec-9ffc-bfac3ac44ef1}">
-          <package>msdynce_ServiceAnchor (9.0.23021.1010)</package>
+          <package>msdynce_ServiceAnchor (9.0.24014.1004)</package>
         </Required>
         <Dependent type="60" displayName="Accounts Dashboard" parentDisplayName="Account" id="{15915835-b87c-49ec-9ffc-bfac3ac44ef1}" />
       </MissingDependency>
       <MissingDependency>
         <Required type="60" displayName="account contact card" parentDisplayName="Contact" solution="msdynce_AppCommon (9.0.4.0066)" id="{29de27bc-a257-4f29-99cf-bab4a84e688f}">
-          <package>msdynce_AppCommonAnchor (9.0.23021.10001)</package>
+          <package>msdynce_AppCommonAnchor (9.0.24014.10002)</package>
         </Required>
         <Dependent type="60" displayName="Account for Multisession experience" parentDisplayName="Account" id="{ff49442f-8c60-4877-bdae-8fe51e6f4636}" />
       </MissingDependency>
       <MissingDependency>
         <Required type="60" displayName="Information" parentDisplayName="Account" solution="msdynce_AppCommon (9.0.4.0066)" id="{b053a39a-041a-4356-acef-ddf00182762b}">
-          <package>msdynce_AppCommonAnchor (9.0.23021.10001)</package>
+          <package>msdynce_AppCommonAnchor (9.0.24014.10002)</package>
         </Required>
         <Dependent type="60" displayName="Information" parentDisplayName="Account" id="{b053a39a-041a-4356-acef-ddf00182762b}" />
       </MissingDependency>
       <MissingDependency>
-        <Required type="60" displayName="Account for Multisession experience" parentDisplayName="Account" solution="msdynce_ServicePatch201911 (9.0.23021.1010)" id="{ff49442f-8c60-4877-bdae-8fe51e6f4636}">
-          <package>msdynce_ServiceAnchor (9.0.23021.1010)</package>
+        <Required type="60" displayName="Account for Multisession experience" parentDisplayName="Account" solution="msdynce_ServicePatch201911 (9.0.24014.1004)" id="{ff49442f-8c60-4877-bdae-8fe51e6f4636}">
+          <package>msdynce_ServiceAnchor (9.0.24014.1004)</package>
         </Required>
         <Dependent type="60" displayName="Account for Multisession experience" parentDisplayName="Account" id="{ff49442f-8c60-4877-bdae-8fe51e6f4636}" />
       </MissingDependency>
       <MissingDependency>
         <Required type="61" schemaName="AppCommon/Account/Account_main_system_library.js" displayName="AppCommon/Account/Account_main_system_library.js" solution="msdynce_AppCommon (9.0.4.0066)">
-          <package>msdynce_AppCommonAnchor (9.0.23021.10001)</package>
+          <package>msdynce_AppCommonAnchor (9.0.24014.10002)</package>
         </Required>
-        <Dependent type="60" displayName="Account for Multisession experience" parentDisplayName="Account" id="{ff49442f-8c60-4877-bdae-8fe51e6f4636}" />
+        <Dependent type="60" displayName="Information" parentDisplayName="Account" id="{b053a39a-041a-4356-acef-ddf00182762b}" />
       </MissingDependency>
       <MissingDependency>
         <Required type="61" schemaName="msdyn_/ActivityFeeds.Form.js" displayName="msdyn_/ActivityFeeds.Form.js" solution="ActivityFeedsCore (9.0.0.0009)" />
@@ -328,16 +422,16 @@
         <Dependent type="60" displayName="Account for Multisession experience" parentDisplayName="Account" id="{ff49442f-8c60-4877-bdae-8fe51e6f4636}" />
       </MissingDependency>
       <MissingDependency>
+        <Required type="61" schemaName="msdyn_/Images/AppModule_Default_Icon.png" displayName="msdyn_/Images/AppModule_Default_Icon.png" solution="AppModuleWebResources (2.5)" />
+        <Dependent type="80" schemaName="nyl_testextract" displayName="test extract" />
+      </MissingDependency>
+      <MissingDependency>
         <Required type="61" schemaName="msdyn_/RecordWall.htm" displayName="msdyn_/RecordWall.htm" solution="ActivityFeedsCore (9.0.0.0009)" />
         <Dependent type="60" displayName="Information" parentDisplayName="Account" id="{b053a39a-041a-4356-acef-ddf00182762b}" />
       </MissingDependency>
       <MissingDependency>
         <Required type="61" schemaName="msdyn_/RecordWall.htm" displayName="msdyn_/RecordWall.htm" solution="ActivityFeedsCore (9.0.0.0009)" />
         <Dependent type="60" displayName="Account for Multisession experience" parentDisplayName="Account" id="{ff49442f-8c60-4877-bdae-8fe51e6f4636}" />
-      </MissingDependency>
-      <MissingDependency>
-        <Required type="connectionreference" displayName="new_sharedcommondataserviceforapps_031f9" solution="Active" id.connectionreferencelogicalname="new_sharedcommondataserviceforapps_031f9" />
-        <Dependent type="29" displayName="Create task on update of contact" id="{837a0ebf-adb6-ec11-983f-0022482bf535}" />
       </MissingDependency>
     </MissingDependencies>
   </SolutionManifest>
