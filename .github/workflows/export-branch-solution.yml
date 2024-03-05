@@ -25,9 +25,9 @@ on:
        default: solutions/
 env:
 #edit your values here
-  ENVIRONMENT_URL: '<Dev environment url>/'
-  CLIENT_ID: ‘<clientId>’
-  TENANT_ID: '<tenantID>'
+  ENVIRONMENT_URL: ${{ secrets.URL }}
+  CLIENT_ID: ${{ secrets.CLIENT_ID }}
+  TENANT_ID: ${{ secrets.TENANT_ID }}
 
 jobs:
   export-from-dev:
