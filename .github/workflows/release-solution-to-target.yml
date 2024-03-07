@@ -10,7 +10,7 @@ on:
       solution_name:
         description: 'The solution name.'
         type: string
-        default: <SolutionName>    
+        default: nyl_demo   
       solution_shipping_folder:
         description: 'folder name for staging the exported solution *do not change*'        
         type: string
@@ -38,12 +38,12 @@ on:
         description: 'The client id'
         type: string
         required: true
-        default: ‘<ClientID>’
+        default: ${{ secrets.CLIENT_ID }}
       TENANT_ID: 
         description: 'The tenant id'
         type: string
         required: true
-        default: ‘<TenantID>’  
+        default: ${{ secrets.TENANT_ID }} 
 
 jobs:
   convert-to-managed:
