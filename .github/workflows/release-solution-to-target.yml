@@ -32,7 +32,7 @@ on:
         description: 'Production environment url.'
         type: string
         required: true
-        default: ‘https://org7ccd9efa.crm.dynamics.com/’
+        default: 'https://org7ccd9efa.crm.dynamics.com/'
         
       CLIENT_ID: 
         description: 'The client id'
