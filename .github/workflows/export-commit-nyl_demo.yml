@@ -18,7 +18,7 @@ on:
 
         required: true 
 
-        default: nyl_demo 
+        default: cei_demo 
 
        #Do Not change these values 
 
