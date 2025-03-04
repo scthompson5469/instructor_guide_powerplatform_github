@@ -14,7 +14,7 @@ on:
 
       solution_name: 
 
-        description: 'nyl_demo' 
+        description: 'cei_demo' 
 
         required: true 
 
