@@ -73,7 +73,7 @@ jobs:
 
     steps: 
 
-    - uses: actions/checkout@v2 
+    - uses: actions/checkout@v4 
 
       with: 
 
@@ -85,7 +85,7 @@ jobs:
 
     - name: export-solution action -unmanaged 
 
-      uses: microsoft/powerplatform-actions/export-solution@v0 
+      uses: microsoft/powerplatform-actions/export-solution@v1 
 
       with: 
 
@@ -105,7 +105,7 @@ jobs:
 
     - name: export-solution action -managed 
 
-      uses: microsoft/powerplatform-actions/export-solution@v0 
+      uses: microsoft/powerplatform-actions/export-solution@v1 
 
       with: 
 
@@ -127,7 +127,7 @@ jobs:
 
     - name: unpack-solution action 
 
-      uses: microsoft/powerplatform-actions/unpack-solution@v0 
+      uses: microsoft/powerplatform-actions/unpack-solution@v1 
 
       with: 
 
@@ -143,7 +143,7 @@ jobs:
 
     - name: branch-solution, prepare it for a PullRequest 
 
-      uses: microsoft/powerplatform-actions/branch-solution@v0 
+      uses: microsoft/powerplatform-actions/branch-solution@v1 
 
       with: 
 
