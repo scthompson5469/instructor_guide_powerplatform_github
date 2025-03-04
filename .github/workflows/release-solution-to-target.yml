@@ -10,7 +10,7 @@ on:
       solution_name:
         description: 'The solution name.'
         type: string
-        default: nyl_demo   
+        default: cei_demo   
       solution_shipping_folder:
         description: 'folder name for staging the exported solution *do not change*'        
         type: string
