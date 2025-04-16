@@ -9,7 +9,8 @@ on:
       solution_name:
         description: 'name of the solution to worked on from Power Platform'
         required: true
-        default: nyl_demo
+        default: lapd_demo
+
        #Do Not change these values
       solution_exported_folder:
         description: 'folder name for staging the exported solution *do not change*'
@@ -42,8 +43,11 @@ jobs:
         lfs: true
 
    
+    - name: actions-install
+      uses: microsoft/powerplatform-actions/actions-install@v1
+   
     - name: export-solution action -unmanaged
-      uses: microsoft/powerplatform-actions/export-solution@v0
+      uses: microsoft/powerplatform-actions/export-solution@v1
       with:
         environment-url: ${{env.ENVIRONMENT_URL}}
         app-id: ${{env.CLIENT_ID}}
@@ -53,7 +57,7 @@ jobs:
         solution-output-file: ${{ github.event.inputs.solution_exported_folder}}/${{ github.event.inputs.solution_name }}.zip
         
     - name: export-solution action -managed
-      uses: microsoft/powerplatform-actions/export-solution@v0
+      uses: microsoft/powerplatform-actions/export-solution@v1
       with:
         environment-url: ${{env.ENVIRONMENT_URL}}
         app-id: ${{env.CLIENT_ID}}
@@ -64,7 +68,7 @@ jobs:
         solution-output-file: ${{ github.event.inputs.solution_exported_folder}}/${{ github.event.inputs.solution_name }}_managed.zip
 
     - name: unpack-solution action
-      uses: microsoft/powerplatform-actions/unpack-solution@v0
+      uses: microsoft/powerplatform-actions/unpack-solution@v1
       with:
         solution-file: ${{ github.event.inputs.solution_exported_folder}}/${{ github.event.inputs.solution_name }}.zip
         solution-folder: ${{ github.event.inputs.solution_folder}}/${{ github.event.inputs.solution_name }}
@@ -72,7 +76,7 @@ jobs:
         overwrite-files: true
 
     - name: branch-solution, prepare it for a PullRequest
-      uses: microsoft/powerplatform-actions/branch-solution@v0
+      uses: microsoft/powerplatform-actions/branch-solution@v1
       with:
         solution-folder: ${{ github.event.inputs.solution_folder}}/${{ github.event.inputs.solution_name }}
         solution-target-folder: ${{ github.event.inputs.solution_target_folder}}/${{ github.event.inputs.solution_name }}
