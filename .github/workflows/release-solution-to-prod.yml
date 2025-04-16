@@ -116,9 +116,11 @@ jobs:
 
  
 
-    - name: Pack solution 
+    - name: Actions Install
+      uses: microsoft/powerplatform-actions/actions-install@v1
 
-      uses: microsoft/powerplatform-actions/pack-solution@v0 
+    - name: Pack solution 
+      uses: microsoft/powerplatform-actions/pack-solution@v1 
 
       with: 
 
@@ -176,10 +178,8 @@ jobs:
 
         path: ${{ inputs.solution_release_folder}} 
 
-    
-    - name: Actions Install
-      uses: microsoft/powerplatform-actions/actions-install@v1
-      
+   
+     
     - name: Import solution to prod env 
 
       uses: microsoft/powerplatform-actions/import-solution@v1 
