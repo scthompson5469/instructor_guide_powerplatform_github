@@ -1,4 +1,4 @@
-name: release-solution-to-prod
+name: release-solution-to-UAT
 # Reusable workflow
 # upload the solution to the GitHub artifacts and deploy to the PROD environment
 on:
@@ -28,17 +28,17 @@ on:
        type: string
        default: out/release
           
-      PRODUCTION_ENVIRONMENT_URL:
-        description: 'Production environment url.'
+      TEST_ENVIRONMENT_URL:
+        description: 'Test environment url.'
         type: string
         required: true
-        default: 'https://org7ccd9efa.crm.dynamics.com/'
+        default: 'https://org0a319ae4.crm.dynamics.com/'
         
       CLIENT_ID: 
         description: 'The client id'
         type: string
         required: true
-        default: '8d8ad8c9-e324-42a5-890a-3b58cecb29ea'
+        default: '50d17c49-a3b8-4a14-8a0a-ee9d0ea6a764'
       TENANT_ID: 
         description: 'The tenant id'
         type: string
@@ -57,6 +57,9 @@ jobs:
       with:
         lfs: true
 
+    - name: actions install
+      uses: microsoft/powerplatform-actions/actions-install@v1
+    
     - name: Pack solution
       uses: microsoft/powerplatform-actions/pack-solution@v1
       with:
@@ -88,7 +91,7 @@ jobs:
         name: managedSolutions
         path: ${{ inputs.solution_release_folder}}
     - name: Import solution to prod env
-      uses: microsoft/powerplatform-actions/import-solution@v0
+      uses: microsoft/powerplatform-actions/import-solution@v1
       with:
         environment-url: ${{inputs.PRODUCTION_ENVIRONMENT_URL}}
         app-id: ${{inputs.CLIENT_ID}}
