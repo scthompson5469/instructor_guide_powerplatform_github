@@ -1,0 +1,105 @@
+name: release-solution-to-UAT
+# Reusable workflow
+# upload the solution to the GitHub artifacts and deploy to the PROD environment
+on:
+  workflow_dispatch:
+    inputs: 
+      #Do Not change these values
+      #Values are set by the caller
+      #caller sample: release-action-call.ymnl
+      solution_name:
+        description: 'The solution name.'
+        type: string
+        default: cei_demo   
+      solution_shipping_folder:
+        description: 'folder name for staging the exported solution *do not change*'        
+        type: string
+        default: out/ship/
+      solution_outbound_folder:
+        description: 'staging the unpacked solution folder before check-in *do not change*'
+        type: string
+        default: out/solutions/
+      solution_source_folder: 
+       description: 'folder name to be created and checked in *do not change*'
+       type: string
+       default: solutions/
+      solution_release_folder:
+       description: 'folder where the released binaries are going to be hosted *do not change*'
+       type: string
+       default: out/release
+          
+      TEST_ENVIRONMENT_URL:
+        description: 'Test environment url.'
+        type: string
+        required: true
+        default: 'https://org0a319ae4.crm.dynamics.com/'
+        
+      CLIENT_ID: 
+        description: 'The client id'
+        type: string
+        required: true
+        default: '50d17c49-a3b8-4a14-8a0a-ee9d0ea6a764'
+      TENANT_ID: 
+        description: 'The tenant id'
+        type: string
+        required: true
+        default: '1557f771-4c8e-4dbd-8b80-dd00a88e833e' 
+
+jobs:
+  convert-to-managed:
+    runs-on: windows-latest
+    # or you can say runs-on: ubuntu-latest
+    env:
+      RUNNER_DEBUG: 1
+
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        lfs: true
+
+    - name: actions install
+      uses: microsoft/powerplatform-actions/actions-install@v1
+    
+    - name: Pack solution
+      uses: microsoft/powerplatform-actions/pack-solution@v1
+      with:
+        solution-folder: ${{ inputs.solution_source_folder}}/${{ inputs.solution_name }}
+        solution-file: ${{ inputs.solution_outbound_folder}}/${{ inputs.solution_name }}_managed.zip
+        solution-type: Managed
+
+
+    - name: Upload the ready to ship solution to GH artifact store
+      uses: actions/upload-artifact@v4
+      with:
+        name: managedSolutions
+        path: ${{ inputs.solution_outbound_folder}}
+
+  release-to-staging:
+    needs: [ convert-to-managed ]
+    runs-on: windows-latest
+    env:
+      RUNNER_DEBUG: 1
+
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        lfs: true
+
+    - name: actions install
+      uses: microsoft/powerplatform-actions/actions-install@v1
+    
+    - name: Fetch the ready to ship solution from GH artifact store
+      uses: actions/download-artifact@v4
+      with:
+        name: managedSolutions
+        path: ${{ inputs.solution_release_folder}}
+    - name: Import solution to prod env
+      uses: microsoft/powerplatform-actions/import-solution@v1
+      with:
+        environment-url: ${{inputs.TEST_ENVIRONMENT_URL}}
+        app-id: ${{inputs.CLIENT_ID}}
+        client-secret: ${{ secrets.PowerPlatformSPN }}
+        tenant-id: ${{inputs.TENANT_ID}}
+        solution-file: ${{ inputs.solution_release_folder}}/${{ inputs.solution_name }}_managed.zip
+        force-overwrite: true
+        publish-changes: true
