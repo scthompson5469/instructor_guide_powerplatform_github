@@ -28,22 +28,12 @@ on:
        type: string
        default: out/release
           
-      TEST_ENVIRONMENT_URL:
-        description: 'Test environment url.'
-        type: string
-        required: true
-        default: 'https://org0a319ae4.crm.dynamics.com/'
-        
-      CLIENT_ID: 
-        description: 'The client id'
-        type: string
-        required: true
-        default: '50d17c49-a3b8-4a14-8a0a-ee9d0ea6a764'
-      TENANT_ID: 
-        description: 'The tenant id'
-        type: string
-        required: true
-        default: '1557f771-4c8e-4dbd-8b80-dd00a88e833e' 
+
+env:
+#edit your values here
+  ENVIRONMENT_URL: ${{ secrets.TEST_URL }}
+  CLIENT_ID: ${{ secrets.CLIENT_ID }}
+  TENANT_ID: ${{ secrets.TENANT_ID }}
 
 jobs:
   convert-to-managed:
@@ -96,10 +86,10 @@ jobs:
     - name: Import solution to prod env
       uses: microsoft/powerplatform-actions/import-solution@v1
       with:
-        environment-url: ${{inputs.TEST_ENVIRONMENT_URL}}
-        app-id: ${{inputs.CLIENT_ID}}
+        environment-url: ${{env.ENVIRONMENT_URL}}
+        app-id: ${{env.CLIENT_ID}}
         client-secret: ${{ secrets.PowerPlatformSPN }}
-        tenant-id: ${{inputs.TENANT_ID}}
+        tenant-id: ${{env.TENANT_ID}}
         solution-file: ${{ inputs.solution_release_folder}}/${{ inputs.solution_name }}_managed.zip
         force-overwrite: true
         publish-changes: true
