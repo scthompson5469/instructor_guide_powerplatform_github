@@ -20,15 +20,14 @@ on:
         type: string
         default: out/solutions/
       solution_source_folder: 
-       description: 'folder name to be created and checked in *do not change*'
-       type: string
-       default: solutions/
+        description: 'folder name to be created and checked in *do not change*'
+        type: string
+        default: solutions/
       solution_release_folder:
-       description: 'folder where the released binaries are going to be hosted *do not change*'
-       type: string
-       default: out/release
-          
-
+        description: 'folder where the released binaries are going to be hosted *do not change*'
+        type: string
+        default: out/release
+           
 env:
 #edit your values here
   ENVIRONMENT_URL: ${{ secrets.TEST_URL }}
@@ -49,7 +48,7 @@ jobs:
 
     - name: actions install
       uses: microsoft/powerplatform-actions/actions-install@v1
-    
+      
     - name: Pack solution
       uses: microsoft/powerplatform-actions/pack-solution@v1
       with:
@@ -57,6 +56,10 @@ jobs:
         solution-file: ${{ inputs.solution_outbound_folder}}/${{ inputs.solution_name }}_managed.zip
         solution-type: Managed
 
+    - name: Copy deploymentsettings.json to outbound solutions folder
+      run: |
+        mkdir -p ${{ inputs.solution_outbound_folder }}
+        cp deploymentsettings.json ${{ inputs.solution_outbound_folder }}
 
     - name: Upload the ready to ship solution to GH artifact store
       uses: actions/upload-artifact@v4
@@ -77,7 +80,7 @@ jobs:
 
     - name: actions install
       uses: microsoft/powerplatform-actions/actions-install@v1
-    
+      
     - name: Fetch the ready to ship solution from GH artifact store
       uses: actions/download-artifact@v4
       with:
@@ -91,6 +94,6 @@ jobs:
         client-secret: ${{ secrets.PowerPlatformSPN }}
         tenant-id: ${{env.TENANT_ID}}
         solution-file: ${{ inputs.solution_release_folder}}/${{ inputs.solution_name }}_managed.zip
-        deployment-settings-file: deploymentsettings.json
+        deployment-settings-file: ${{ inputs.solution_outbound_folder }}/deploymentsettings.json
         force-overwrite: true
         publish-changes: true
