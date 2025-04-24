@@ -3,7 +3,7 @@
   "ConnectionReferences": [
     {
       "LogicalName": "msdyn_Dataverse",
-      "ConnectionId": ""
+      "ConnectionId": "shared-commondataser-4840e97a-9f72-4ca0-b21a-7ca3bc413165"
     }
   ]
 }
