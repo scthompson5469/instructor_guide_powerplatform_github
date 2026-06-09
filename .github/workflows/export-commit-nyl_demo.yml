@@ -14,11 +14,11 @@ on:
 
       solution_name: 
 
-        description: 'cei_demo' 
+        description: 'JDDemo' 
 
         required: true 
 
-        default: cei_demo 
+        default: JDDemo 
 
        #Do Not change these values 
 
