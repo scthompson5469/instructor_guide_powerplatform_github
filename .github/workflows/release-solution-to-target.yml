@@ -94,6 +94,5 @@ jobs:
         tenant-id: ${{env.TENANT_ID}}
         solution-file: ${{ inputs.solution_release_folder}}/${{ inputs.solution_name }}_managed.zip
         use-deployment-settings-file: true
+        stage-and-upgrade: true
         deployment-settings-file: ${{ inputs.solution_release_folder }}/deploymentsettings.json
-        force-overwrite: true
-        publish-changes: true
